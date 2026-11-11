@@ -1,0 +1,193 @@
+<!doctype html>
+<html lang="en" class="rm-tokens rm-page"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Royal dark mock: datasets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,500&display=swap" rel="stylesheet">
+<style>
+/* Hallmark · mock of an existing system (Royal) · genre: modern-minimal · theme: Royal dark, proposal only
+ * pre-emit critique: P4 H4 E4 S4 R5 V3
+ * Royal's light tokens keep their names. Values marked "new" do not exist in tokens.css yet. */
+.rm-tokens{
+  --color-paper:#101011;--color-surface:#161617;--color-raised:#1e1e20;--color-rule:#29292b;
+  --color-ink:#f2f2f2;--color-muted:#a0a0a3;--color-faint:#85858a;
+  --color-accent:#2555e8;--color-accent-hover:#3b68f0;--color-accent-text:#8aa4ff;--color-on-accent:#ffffff;
+  --color-accent-soft:color-mix(in srgb,var(--color-accent) 24%,var(--color-surface));
+  --color-control-border:color-mix(in srgb,var(--color-ink) 34%,var(--color-paper));
+  --color-good:#3fb950;--color-warn:#fab219; /* new */
+  --chart-1:#5b7cf5;--chart-2:#d95926;--chart-3:#199e70;--chart-4:#c98500;--chart-5:#d55181; /* new */
+  --font-display:"Source Serif 4",Georgia,serif;--font-body:"Instrument Sans",Arial,sans-serif;
+  --font-mono:"IBM Plex Mono",ui-monospace,monospace; /* new */
+  --radius-control:6px;--radius-card:10px; /* card radius is new, Royal's panel radius is 16px */
+  --control-height:34px;--space-sm:8px;--space-md:16px;--space-lg:24px;
+  --text-small:12px;--text-label:14px;--text-body:16px;--text-title:32px;
+  --ease-out:cubic-bezier(.22,1,.36,1);--dur-short:120ms;
+}
+.rm-page{background:var(--color-paper)}
+.rm-page body{margin:var(--space-lg)}
+.rm-app{position:relative;background:var(--color-paper);color:var(--color-ink);font:400 var(--text-label)/1.45 var(--font-body);border:1px solid var(--color-rule);border-radius:var(--radius,12px);overflow:clip;-webkit-font-smoothing:antialiased}
+.rm-app *{box-sizing:border-box}
+.rm-app :focus-visible{outline:2px solid var(--color-accent-text);outline-offset:2px}
+.rm-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+.rm-cap{font:400 11px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--color-faint)}
+.rm-dot{width:6px;height:6px;border-radius:50%;background:var(--color-faint);flex:none}
+.rm-dot[data-s=good]{background:var(--color-good)}.rm-dot[data-s=warn]{background:var(--color-warn)}
+.rm-top{display:flex;align-items:center;gap:12px;height:48px;padding:0 var(--space-md);border-bottom:1px solid var(--color-rule)}
+.rm-brand{font:500 20px/1 var(--font-display);letter-spacing:-.03em}
+.rm-top-right{margin-left:auto;display:flex;align-items:center;gap:var(--space-sm);font:400 var(--text-small)/1 var(--font-mono);color:var(--color-muted);white-space:nowrap}
+.rm-body{display:grid;grid-template-columns:164px minmax(0,1fr)}
+.rm-side{border-right:1px solid var(--color-rule);padding:var(--space-md) var(--space-sm);display:flex;flex-direction:column;gap:var(--space-md)}
+.rm-group{display:grid;gap:2px}
+.rm-group .rm-cap{padding:0 8px 6px}
+.rm-nav{display:flex;align-items:center;gap:8px;height:30px;padding:0 8px;border-radius:var(--radius-control);color:var(--color-muted);text-decoration:none;white-space:nowrap;transition:background var(--dur-short) var(--ease-out)}
+.rm-nav:hover{background:var(--color-surface);color:var(--color-ink)}
+.rm-nav[aria-current]{background:var(--color-accent-soft);color:var(--color-ink);font-weight:500}
+.rm-count{margin-left:auto;min-width:18px;padding:0 4px;border-radius:9px;background:var(--color-raised);color:var(--color-muted);font:500 11px/18px var(--font-mono);text-align:center}
+.rm-side-foot{margin-top:auto;border-top:1px solid var(--color-rule);padding:12px 8px 0;display:grid;gap:6px;font-size:var(--text-small);color:var(--color-muted)}
+.rm-side-foot p{margin:0}
+.rm-row{display:flex;align-items:center;gap:8px;color:var(--color-ink)}
+.rm-main{padding:20px;display:grid;gap:var(--space-md);align-content:start;min-width:0}
+.rm-head{display:flex;flex-wrap:wrap;align-items:flex-end;gap:12px}
+.rm-title{margin:0;font:500 var(--text-title)/1.03 var(--font-display);letter-spacing:-.05em}
+.rm-sub{margin:6px 0 0;color:var(--color-muted)}
+.rm-actions{margin-left:auto;display:flex;gap:8px}
+.rm-btn{height:var(--control-height);padding:0 12px;border:1px solid var(--color-control-border);border-radius:var(--radius-control);background:transparent;color:var(--color-ink);font:500 var(--text-label)/1 var(--font-body);white-space:nowrap;cursor:pointer;transition:background var(--dur-short) var(--ease-out)}
+.rm-btn:hover{background:var(--color-raised)}
+.rm-btn[data-v=primary]{background:var(--color-accent);border-color:var(--color-accent);color:var(--color-on-accent)}
+.rm-btn[data-v=primary]:hover{background:var(--color-accent-hover)}
+.rm-btn[data-v=icon]{width:var(--control-height);padding:0;display:grid;place-items:center;border-color:transparent;color:var(--color-muted)}
+.rm-menu{display:none}
+.rm-cards{display:grid;gap:var(--space-md);grid-template-columns:minmax(0,1fr)}
+.rm-card{background:var(--color-surface);border:1px solid var(--color-rule);border-radius:var(--radius-card);min-width:0}
+.rm-card-head{display:flex;align-items:flex-start;gap:12px;padding:var(--space-md);border-bottom:1px solid var(--color-rule)}
+.rm-card-title{margin:0;font:600 var(--text-body)/1.3 var(--font-body);overflow-wrap:anywhere}
+.rm-meta{margin:4px 0 0;font:400 var(--text-small)/1.4 var(--font-mono);color:var(--color-muted)}
+.rm-badge{margin-left:auto;display:inline-flex;align-items:center;gap:6px;height:22px;padding:0 8px;border:1px solid var(--color-rule);border-radius:var(--radius-control);font:500 var(--text-small)/1 var(--font-mono);white-space:nowrap}
+.rm-card-body{padding:var(--space-md);display:grid;gap:var(--space-md)}
+.rm-two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--space-md);align-items:start}
+.rm-label{margin:0 0 4px;font-size:var(--text-small);color:var(--color-muted)}
+.rm-stat p{margin:0}
+.rm-fig{font:500 var(--text-body)/1.3 var(--font-mono)}
+.rm-seg{display:grid;grid-template-columns:1fr 1fr;height:var(--control-height);padding:3px;border:1px solid var(--color-rule);border-radius:var(--radius-control);background:var(--color-paper)}
+.rm-seg button{border:0;border-radius:calc(var(--radius-control) - 2px);background:transparent;color:var(--color-muted);font:500 var(--text-label)/1 var(--font-body);cursor:pointer;transition:background var(--dur-short) var(--ease-out)}
+.rm-seg button:hover{color:var(--color-ink)}
+.rm-seg button[aria-selected=true]{background:var(--color-raised);color:var(--color-ink)}
+.rm-panel{display:grid;gap:var(--space-md)}
+.rm-chart{display:grid;grid-template-columns:84px minmax(0,1fr);gap:4px 12px;align-items:center}
+.rm-chart .rm-label{grid-column:1/-1;margin:0}
+.rm-donut{position:relative;width:84px;height:84px}
+.rm-donut svg{display:block;transform:rotate(-90deg)}
+.rm-donut circle{fill:none;stroke-width:10;pointer-events:stroke;transition:stroke-width var(--dur-short) var(--ease-out)}
+.rm-donut circle:hover,.rm-donut circle:focus-visible{stroke-width:13;outline:none}
+.rm-donut-c{position:absolute;inset:0;display:grid;place-content:center;text-align:center;font:500 13px/1.15 var(--font-mono);pointer-events:none}
+.rm-donut-c small{display:block;font-size:10px;font-weight:400;color:var(--color-muted)}
+.rm-legend{width:100%;max-width:300px;border-collapse:collapse;font-size:var(--text-small)}
+.rm-legend th{padding:2px 0;font-weight:400;text-align:left;white-space:nowrap}
+.rm-legend td{padding:2px 0 2px 8px;font-family:var(--font-mono);text-align:right}
+.rm-legend td:last-child{color:var(--color-muted)}
+.rm-sw{display:inline-block;width:8px;height:8px;margin-right:6px;border-radius:50%}
+.rm-hist{display:grid;grid-template-columns:auto minmax(0,1fr);gap:0 8px;margin-top:8px}
+.rm-y{display:flex;flex-direction:column;justify-content:space-between;height:106px;margin:-5px 0;font:400 11px/1 var(--font-mono);color:var(--color-muted);text-align:right}
+.rm-plot{height:96px;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));background:linear-gradient(var(--color-rule) 0 0) top/100% 1px no-repeat,linear-gradient(var(--color-rule) 0 0) center/100% 1px no-repeat,linear-gradient(var(--color-rule) 0 0) bottom/100% 1px no-repeat}
+.rm-band{position:relative;display:flex;align-items:flex-end;justify-content:center}
+.rm-bar{width:min(24px,60%);border-radius:4px 4px 0 0;background:var(--chart-1);transition:filter var(--dur-short) var(--ease-out)}
+.rm-band:hover .rm-bar,.rm-band:focus-visible .rm-bar{filter:brightness(1.2)}
+.rm-val{position:absolute;left:0;right:0;text-align:center;font:500 11px/1 var(--font-mono)}
+.rm-x{grid-column:2;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));margin-top:6px;font:400 11px/1 var(--font-mono);color:var(--color-muted);text-align:center}
+.rm-notes{border-top:1px solid var(--color-rule);padding-top:var(--space-md);display:grid;gap:8px;color:var(--color-muted)}
+.rm-notes p{margin:0;max-width:68ch}
+.rm-notes .rm-meta{color:var(--color-faint)}
+.rm-tip{position:absolute;z-index:2;left:0;top:0;padding:6px 8px;border:1px solid var(--color-control-border);border-radius:var(--radius-control);background:var(--color-raised);color:var(--color-muted);font:400 var(--text-small)/1.3 var(--font-body);white-space:nowrap;pointer-events:none;opacity:0;transform:translate(-50%,calc(-100% - 10px))}
+.rm-tip[data-on]{opacity:1}
+.rm-tip b{display:block;font:500 13px/1.3 var(--font-mono);color:var(--color-ink)}
+.rm-key{display:inline-block;width:10px;height:2px;margin-right:6px;vertical-align:middle}
+.rm-strip{margin-top:20px;color:var(--foreground,var(--color-ink));font:400 12px/1.4 var(--font-mono,monospace)}
+.rm-strip h2{margin:0 0 10px;font:500 14px/1.3 var(--font-sans,var(--font-body))}
+.rm-swatches{display:grid;grid-template-columns:repeat(auto-fill,minmax(98px,1fr));gap:10px}
+.rm-swatches i{display:block;height:28px;margin-bottom:4px;border:1px solid var(--border,var(--color-rule));border-radius:6px}
+.rm-swatches span{display:block;color:var(--muted-foreground,var(--color-muted))}
+/* The two donuts sit side by side only where a card is wider than about 640px. */
+.rm-charts{grid-template-columns:minmax(0,1fr)}
+@media(min-width:900px) and (max-width:1099px),(min-width:1560px){.rm-charts{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(min-width:1100px){.rm-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:640px){
+  .rm-page body{margin:var(--space-sm)}
+  .rm-body{grid-template-columns:minmax(0,1fr)}.rm-side,.rm-top .rm-cap,.rm-upd{display:none}
+  .rm-menu{display:block}.rm-main{padding:var(--space-md)}
+  .rm-card-head{flex-wrap:wrap}
+}
+@media(prefers-reduced-motion:reduce){.rm-app *{transition:none}}
+</style></head>
+<body>
+<div class="rm-tokens rm-app">
+  <header class="rm-top">
+    <span class="rm-brand">Royal</span><span class="rm-cap">Sample workspace</span>
+    <div class="rm-top-right">
+      <span class="rm-dot" data-s="good"></span><span>Live</span><span class="rm-upd">Updated 09:42</span>
+      <button class="rm-btn rm-menu" type="button">Menu</button>
+      <button class="rm-btn" data-v="icon" type="button" aria-label="Switch to light theme"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M13.5 9.6A5.8 5.8 0 0 1 6.4 2.5a5.8 5.8 0 1 0 7.1 7.1Z"/></svg></button>
+    </div>
+  </header>
+  <div class="rm-body">
+    <nav class="rm-side" aria-label="Workspace"></nav>
+    <main class="rm-main">
+      <div class="rm-head">
+        <div><h1 class="rm-title">Datasets</h1><p class="rm-sub">2 builds from support-threads v1.1</p></div>
+        <div class="rm-actions"><button class="rm-btn" type="button">Export</button><button class="rm-btn" data-v="primary" type="button">New build</button></div>
+      </div>
+      <div class="rm-cards"></div>
+    </main>
+  </div>
+  <div class="rm-tip" aria-hidden="true"></div>
+</div>
+<section class="rm-strip" aria-label="Dark values in this mock">
+  <h2>Dark values in this mock</h2>
+  <div class="rm-swatches"></div>
+</section>
+<script>
+const NAV=[['Home',[['Overview','good'],['Activity','warn',2]]],['Data',[['Sources','good'],['Sync','warn'],['Logs','idle']]],['Lab',[['Datasets','idle',0,1],['Benchmarks','idle'],['Inference','idle']]],['Studio',[['Projects','idle'],['Content','idle']]]];
+const STATE={good:'healthy',warn:'needs attention',idle:'idle'};
+const C=['Email','Chat','Phone notes','Web form','Forum'],R=['Americas','EMEA'],B=['0-1k','1-2k','2-4k','4-8k','8-16k','16-32k'];
+const SETS=[
+ {name:'support-threads-resolved',meta:'v1.1-r1 · from support-threads-v1.1 · Oct 16, 2026',status:['good','Ready'],total:'40.3M tokens in total',
+  notes:['Max length 32,768 tokens. Longer threads are split at message boundaries into windows that do not overlap.','Names, emails and order numbers are replaced with placeholders. Review before sharing outside the team.'],foot:'tokenizer rt-2 · template 4be1d0a · checked 30/30',
+  train:{t:'1,280',tok:'38.4M tokens · 41.2% agent',c:[2150,1434,768,512,256],r:[2970,2150],h:[310,640,1180,1620,960,410]},
+  eval:{t:'64',tok:'1.9M tokens · 40.6% agent',c:[108,72,38,26,12],r:[150,106],h:[16,32,58,82,48,20]}},
+ {name:'support-threads-escalated',meta:'v1.1-r1 · from support-threads-v1.1 · Oct 16, 2026',status:['warn','Building'],total:'17.0M tokens in total',
+  notes:['Same build as support-threads-resolved, limited to threads handed to a second agent.','Eval rows are still being checked.'],foot:'tokenizer rt-2 · template 4be1d0a · checked 21/30',
+  train:{t:'412',tok:'16.2M tokens · 44.8% agent',c:[590,644,368,146,92],r:[1104,736],h:[74,166,350,570,440,240]},
+  eval:{t:'21',tok:'0.8M tokens · 43.9% agent',c:[30,32,18,7,5],r:[55,37],h:[4,8,18,28,22,12]}}];
+const TOKENS=[['paper','#101011',''],['surface','#161617',''],['rule','#29292b',''],['faint','#85858a','4.9:1'],['muted','#a0a0a3','6.9:1'],['ink','#f2f2f2','16.2:1'],['accent','#2555e8','3.1:1, fills'],['accent text','#8aa4ff','7.6:1'],['chart 1','#5b7cf5',''],['chart 2','#d95926',''],['chart 3','#199e70',''],['chart 4','#c98500',''],['chart 5','#d55181','']];
+const f=n=>n.toLocaleString('en-US'),sum=a=>a.reduce((x,y)=>x+y,0);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+function donut(title,names,vals){
+  const tot=sum(vals),g=.94;let at=0,segs='',rows='';
+  vals.forEach((v,i)=>{const p=v/tot*100,pc=p.toFixed(1)+'%';
+    segs+=`<circle cx="42" cy="42" r="34" pathLength="100" stroke="var(--chart-${i+1})" stroke-dasharray="${(p-g).toFixed(2)} 100" stroke-dashoffset="${(-at-g/2).toFixed(2)}" tabindex="0" role="img" aria-label="${esc(names[i])}: ${f(v)} rows, ${pc}" data-k="${i+1}" data-tip="${esc(names[i])}" data-val="${f(v)} rows · ${pc}"/>`;
+    rows+=`<tr><th scope="row"><i class="rm-sw" style="background:var(--chart-${i+1})"></i>${esc(names[i])}</th><td>${f(v)}</td><td>${pc}</td></tr>`;at+=p});
+  return `<div class="rm-chart"><p class="rm-label">${title}</p><div class="rm-donut"><svg width="84" height="84" viewBox="0 0 84 84">${segs}</svg><div class="rm-donut-c">${f(tot)}<small>rows</small></div></div><table class="rm-legend" aria-label="${title}">${rows}</table></div>`}
+function hist(vals){
+  const max=Math.max(...vals),m=max*1.15,pw=10**Math.floor(Math.log10(m)),top=[1,1.5,2,3,4,5,6,8,10].find(s=>s*pw>=m)*pw;
+  const bands=vals.map((v,i)=>{const h=v/top*100;return `<div class="rm-band" tabindex="0" role="img" aria-label="${B[i]} tokens: ${f(v)} rows" data-tip="${B[i]} tokens" data-val="${f(v)} rows">${v===max?`<span class="rm-val" style="bottom:calc(${h}% + 4px)">${f(v)}</span>`:''}<div class="rm-bar" style="height:${h}%"></div></div>`}).join('');
+  return `<div class="rm-hist"><div class="rm-y"><span>${f(top)}</span><span>${f(top/2)}</span><span>0</span></div><div class="rm-plot">${bands}</div><div class="rm-x">${B.map(b=>`<span>${b}</span>`).join('')}</div></div>`}
+const panel=d=>`<div class="rm-two rm-charts">${donut('Channel',C,d.c)}${donut('Region',R,d.r)}</div><div><p class="rm-label">Token length, rows per bin</p>${hist(d.h)}</div>`;
+const stat=(k,d)=>`<div class="rm-stat"><p class="rm-label">${k}</p><p><span class="rm-fig">${d.t}</span> threads in ${f(sum(d.c))} rows</p><p class="rm-meta">${d.tok}</p></div>`;
+document.querySelector('.rm-side').innerHTML=NAV.map(([g,items])=>`<div class="rm-group"><span class="rm-cap">${g}</span>${items.map(([n,s,c,on])=>`<a class="rm-nav" href="#"${on?' aria-current="page"':''}><span class="rm-dot" data-s="${s}"></span>${n}<span class="rm-sr">, ${STATE[s]}</span>${c?`<span class="rm-count">${c}</span>`:''}</a>`).join('')}</div>`).join('')+
+ `<div class="rm-side-foot"><span class="rm-cap">Connection</span><p class="rm-row"><span class="rm-dot" data-s="good"></span>Connected</p><p>Collectors and history are syncing.</p><p class="rm-meta">build 0.4.1</p></div>`;
+document.querySelector('.rm-cards').innerHTML=SETS.map((s,i)=>`<article class="rm-card" data-i="${i}"><div class="rm-card-head"><div><h2 class="rm-card-title">${esc(s.name)}</h2><p class="rm-meta">${esc(s.meta)}</p></div><span class="rm-badge"><span class="rm-dot" data-s="${s.status[0]}"></span>${s.status[1]}</span></div>
+ <div class="rm-card-body"><div class="rm-two">${stat('Train',s.train)}${stat('Eval',s.eval)}</div><p class="rm-meta" style="margin:0">${s.total}</p>
+ <div class="rm-seg" role="tablist" aria-label="Split"><button type="button" role="tab" aria-selected="true" data-k="train">Train</button><button type="button" role="tab" aria-selected="false" data-k="eval">Eval</button></div>
+ <div class="rm-panel">${panel(s.train)}</div>
+ <div class="rm-notes">${s.notes.map(n=>`<p>${esc(n)}</p>`).join('')}<p class="rm-meta">${esc(s.foot)}</p></div></div></article>`).join('');
+document.querySelector('.rm-swatches').innerHTML=TOKENS.map(([n,h,r])=>`<div><i style="background:${h}"></i>${n}<span>${h}${r?' · '+r:''}</span></div>`).join('');
+const app=document.querySelector('.rm-app'),tip=app.querySelector('.rm-tip');
+function show(t,x,y){tip.innerHTML=`<b>${esc(t.dataset.val)}</b>${t.dataset.k?`<i class="rm-key" style="background:var(--chart-${t.dataset.k})"></i>`:''}${esc(t.dataset.tip)}`;
+  const r=app.getBoundingClientRect(),w=tip.offsetWidth/2+8;tip.style.left=Math.min(Math.max(x-r.left,w),r.width-w)+'px';tip.style.top=(y-r.top)+'px';tip.dataset.on=''}
+const hide=()=>{delete tip.dataset.on};
+app.addEventListener('pointermove',e=>{const t=e.target.closest('[data-tip]');t?show(t,e.clientX,e.clientY):hide()});
+app.addEventListener('pointerleave',hide);
+app.addEventListener('focusin',e=>{const t=e.target.closest('[data-tip]');if(t){const b=t.getBoundingClientRect();show(t,b.left+b.width/2,b.top)}});
+app.addEventListener('focusout',hide);
+app.addEventListener('click',e=>{const b=e.target.closest('[role=tab]');if(!b)return;const card=b.closest('.rm-card');
+  card.querySelectorAll('[role=tab]').forEach(x=>x.setAttribute('aria-selected',x===b));card.querySelector('.rm-panel').innerHTML=panel(SETS[card.dataset.i][b.dataset.k])});
+</script>
+</body></html>

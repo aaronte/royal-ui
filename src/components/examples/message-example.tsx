@@ -1,0 +1,3 @@
+import { Message, MessageContent, MessageHeader, MessageFooter, MessageGroup } from "../ui/message"
+import { Bubble, BubbleContent } from "../ui/bubble"
+export default function MessageExample() { return <MessageGroup><Message><MessageContent><MessageHeader>Studio</MessageHeader><Bubble variant="secondary"><BubbleContent>What shall we work on next?</BubbleContent></Bubble><MessageFooter>Sample conversation</MessageFooter></MessageContent></Message><Message align="end"><MessageContent><Bubble><BubbleContent>The details that make a system feel considered.</BubbleContent></Bubble></MessageContent></Message></MessageGroup> }

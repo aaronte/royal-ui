@@ -1,0 +1,714 @@
+{
+  "retrieved": "2026-11-08",
+  "components": [
+    {
+      "name": "item",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/item.json",
+      "files": [
+        "registry/new-york-v4/ui/item.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "switch",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/switch.json",
+      "files": [
+        "registry/new-york-v4/ui/switch.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "empty",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/empty.json",
+      "files": [
+        "registry/new-york-v4/ui/empty.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "sheet",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/sheet.json",
+      "files": [
+        "registry/new-york-v4/ui/sheet.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "direction",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/direction.json",
+      "files": [
+        "registry/new-york-v4/ui/direction.tsx"
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "drawer",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/drawer.json",
+      "files": [
+        "registry/new-york-v4/ui/drawer.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "vaul"
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/aspect-ratio.json",
+      "files": [
+        "registry/new-york-v4/ui/aspect-ratio.tsx"
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "sidebar",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/sidebar.json",
+      "files": [
+        "registry/new-york-v4/ui/sidebar.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui",
+        "class-variance-authority",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "marker",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/marker.json",
+      "files": [
+        "registry/new-york-v4/ui/marker.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "input-group",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/input-group.json",
+      "files": [
+        "registry/new-york-v4/ui/input-group.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "field",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/field.json",
+      "files": [
+        "registry/new-york-v4/ui/field.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/scroll-area.json",
+      "files": [
+        "registry/new-york-v4/ui/scroll-area.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "sonner",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/sonner.json",
+      "files": [
+        "registry/new-york-v4/ui/sonner.tsx"
+      ],
+      "dependencies": [
+        "sonner",
+        "next-themes"
+      ]
+    },
+    {
+      "name": "attachment",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/attachment.json",
+      "files": [
+        "registry/new-york-v4/ui/attachment.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "spinner",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/spinner.json",
+      "files": [
+        "registry/new-york-v4/ui/spinner.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "class-variance-authority"
+      ]
+    },
+    {
+      "name": "tooltip",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/tooltip.json",
+      "files": [
+        "registry/new-york-v4/ui/tooltip.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "input",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/input.json",
+      "files": [
+        "registry/new-york-v4/ui/input.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "slider",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/slider.json",
+      "files": [
+        "registry/new-york-v4/ui/slider.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "radio-group",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/radio-group.json",
+      "files": [
+        "registry/new-york-v4/ui/radio-group.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/breadcrumb.json",
+      "files": [
+        "registry/new-york-v4/ui/breadcrumb.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/dropdown-menu.json",
+      "files": [
+        "registry/new-york-v4/ui/dropdown-menu.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "alert",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/alert.json",
+      "files": [
+        "registry/new-york-v4/ui/alert.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "native-select",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/native-select.json",
+      "files": [
+        "registry/new-york-v4/ui/native-select.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "chart",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/chart.json",
+      "files": [
+        "registry/new-york-v4/ui/chart.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "recharts@3.8.0",
+        "lucide-react"
+      ]
+    },
+    {
+      "name": "context-menu",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/context-menu.json",
+      "files": [
+        "registry/new-york-v4/ui/context-menu.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "dialog",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/dialog.json",
+      "files": [
+        "registry/new-york-v4/ui/dialog.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "checkbox",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/checkbox.json",
+      "files": [
+        "registry/new-york-v4/ui/checkbox.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "collapsible",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/collapsible.json",
+      "files": [
+        "registry/new-york-v4/ui/collapsible.tsx"
+      ],
+      "dependencies": [
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "input-otp",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/input-otp.json",
+      "files": [
+        "registry/new-york-v4/ui/input-otp.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "input-otp"
+      ]
+    },
+    {
+      "name": "button-group",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/button-group.json",
+      "files": [
+        "registry/new-york-v4/ui/button-group.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "carousel",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/carousel.json",
+      "files": [
+        "registry/new-york-v4/ui/carousel.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "embla-carousel-react"
+      ]
+    },
+    {
+      "name": "menubar",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/menubar.json",
+      "files": [
+        "registry/new-york-v4/ui/menubar.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "card",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/card.json",
+      "files": [
+        "registry/new-york-v4/ui/card.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "command",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/command.json",
+      "files": [
+        "registry/new-york-v4/ui/command.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "cmdk"
+      ]
+    },
+    {
+      "name": "button",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/button.json",
+      "files": [
+        "registry/new-york-v4/ui/button.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "table",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/table.json",
+      "files": [
+        "registry/new-york-v4/ui/table.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/alert-dialog.json",
+      "files": [
+        "registry/new-york-v4/ui/alert-dialog.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "textarea",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/textarea.json",
+      "files": [
+        "registry/new-york-v4/ui/textarea.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "accordion",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/accordion.json",
+      "files": [
+        "registry/new-york-v4/ui/accordion.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "skeleton",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/skeleton.json",
+      "files": [
+        "registry/new-york-v4/ui/skeleton.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "tabs",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/tabs.json",
+      "files": [
+        "registry/new-york-v4/ui/tabs.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "avatar",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/avatar.json",
+      "files": [
+        "registry/new-york-v4/ui/avatar.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "progress",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/progress.json",
+      "files": [
+        "registry/new-york-v4/ui/progress.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "popover",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/popover.json",
+      "files": [
+        "registry/new-york-v4/ui/popover.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "combobox",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/combobox.json",
+      "files": [
+        "registry/new-york-v4/ui/combobox.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "@base-ui/react"
+      ]
+    },
+    {
+      "name": "bubble",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/bubble.json",
+      "files": [
+        "registry/new-york-v4/ui/bubble.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "resizable",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/resizable.json",
+      "files": [
+        "registry/new-york-v4/ui/resizable.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "react-resizable-panels@^4"
+      ]
+    },
+    {
+      "name": "kbd",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/kbd.json",
+      "files": [
+        "registry/new-york-v4/ui/kbd.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "calendar",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/calendar.json",
+      "files": [
+        "registry/new-york-v4/ui/calendar.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "react-day-picker@latest",
+        "date-fns"
+      ]
+    },
+    {
+      "name": "pagination",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/pagination.json",
+      "files": [
+        "registry/new-york-v4/ui/pagination.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/toggle-group.json",
+      "files": [
+        "registry/new-york-v4/ui/toggle-group.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "label",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/label.json",
+      "files": [
+        "registry/new-york-v4/ui/label.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "form",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/form.json",
+      "files": [
+        "registry/new-york-v4/ui/form.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui",
+        "@hookform/resolvers",
+        "zod",
+        "react-hook-form"
+      ]
+    },
+    {
+      "name": "hover-card",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/hover-card.json",
+      "files": [
+        "registry/new-york-v4/ui/hover-card.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/navigation-menu.json",
+      "files": [
+        "registry/new-york-v4/ui/navigation-menu.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "toggle",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/toggle.json",
+      "files": [
+        "registry/new-york-v4/ui/toggle.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/message-scroller.json",
+      "files": [
+        "registry/new-york-v4/ui/message-scroller.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "@shadcn/react"
+      ]
+    },
+    {
+      "name": "separator",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/separator.json",
+      "files": [
+        "registry/new-york-v4/ui/separator.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "badge",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/badge.json",
+      "files": [
+        "registry/new-york-v4/ui/badge.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "message",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/message.json",
+      "files": [
+        "registry/new-york-v4/ui/message.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "select",
+      "source": "https://ui.shadcn.com/r/styles/new-york-v4/select.json",
+      "files": [
+        "registry/new-york-v4/ui/select.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "radix-ui"
+      ]
+    },
+    {
+      "name": "trace",
+      "source": "https://ui.shadcn.com/r/styles/radix-nova/trace.json",
+      "files": [
+        "registry/radix-nova/ui/trace.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "use-mobile",
+      "source": "https://ui.shadcn.com/r/styles/radix-nova/use-mobile.json",
+      "files": [
+        "registry/radix-nova/hooks/use-mobile.ts"
+      ],
+      "dependencies": []
+    },
+    {
+      "name": "code-block",
+      "source": "https://ui.shadcn.com/r/styles/radix-nova/code-block.json",
+      "files": [
+        "registry/radix-nova/ui/code-block.tsx"
+      ],
+      "dependencies": [
+        "cn"
+      ]
+    },
+    {
+      "name": "use-highlighted-code",
+      "source": "https://ui.shadcn.com/r/styles/radix-nova/use-highlighted-code.json",
+      "files": [
+        "registry/radix-nova/hooks/use-highlighted-code.ts",
+        "registry/radix-nova/lib/highlighter.tsx"
+      ],
+      "dependencies": [
+        "shiki"
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "source": "https://ui.shadcn.com/r/styles/radix-nova/questionnaire.json",
+      "files": [
+        "registry/radix-nova/ui/questionnaire.tsx"
+      ],
+      "dependencies": [
+        "cn",
+        "@shadcn/react"
+      ]
+    }
+  ]
+}

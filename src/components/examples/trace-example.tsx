@@ -1,0 +1,4 @@
+"use client"
+import { Trace, TraceLine, TraceTitle, TraceIcon, TraceCollapsible, TraceCollapsibleTrigger, TraceCollapsibleContent } from "../ui/trace"
+import { Check, ChevronDown, LoaderCircle } from "lucide-react"
+export default function TraceExample() { return <Trace><TraceLine><TraceIcon><Check /></TraceIcon><TraceTitle>Found the design tokens</TraceTitle></TraceLine><TraceCollapsible><TraceCollapsibleTrigger><TraceLine><TraceIcon><ChevronDown /></TraceIcon><TraceTitle>Review the component decisions</TraceTitle></TraceLine></TraceCollapsibleTrigger><TraceCollapsibleContent>Source Serif 4 headings, Instrument Sans controls, and royal blue accents.</TraceCollapsibleContent></TraceCollapsible><TraceLine status="running"><TraceIcon><LoaderCircle className="animate-spin" /></TraceIcon><TraceTitle>Sample running state</TraceTitle></TraceLine></Trace> }

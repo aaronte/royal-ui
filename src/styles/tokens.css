@@ -1,0 +1,163 @@
+/* Royal tokens. Light is the base block. Dark applies with a .dark class on the root element. */
+:root {
+  --royal-color-paper: #ffffff;
+  --royal-color-ink: #000000;
+  --royal-color-muted: #666666;
+  --royal-color-rule: #d8d8d8;
+  --royal-color-wash: #f5f5f5;
+  --royal-color-raised: #ebebeb;
+  --royal-color-faint: #6e6e6e;
+  --royal-color-material-backdrop: color-mix(in srgb, var(--royal-color-ink) 7%, var(--royal-color-paper));
+  --royal-color-accent: #2555e8;
+  --royal-color-accent-hover: #1e45c0;
+  --royal-color-accent-text: var(--royal-color-accent);
+  --royal-color-accent-text-hover: var(--royal-color-accent-hover);
+  --royal-color-on-accent: #ffffff;
+  --royal-color-focus: var(--royal-color-accent);
+  --royal-color-accent-field: color-mix(in srgb, var(--royal-color-accent) 2%, var(--royal-color-paper));
+  --royal-color-accent-soft: color-mix(in srgb, var(--royal-color-accent) 8%, var(--royal-color-paper));
+  --royal-color-accent-active: color-mix(in srgb, var(--royal-color-accent) 12%, var(--royal-color-paper));
+  --royal-color-accent-edge: color-mix(in srgb, var(--royal-color-accent) 24%, var(--royal-color-paper));
+  --royal-color-control-shadow: color-mix(in srgb, var(--royal-color-ink) 10%, transparent);
+  --royal-color-control-highlight: color-mix(in srgb, var(--royal-color-paper) 12%, transparent);
+  --royal-color-control-sheen: color-mix(in srgb, var(--royal-color-paper) 6%, transparent);
+  --royal-text-section: 20px;
+  --royal-tracking-section: -0.02em;
+  --royal-color-control-border: color-mix(in srgb, var(--royal-color-ink) 55%, var(--royal-color-paper));
+  --royal-color-track: var(--royal-color-rule);
+  --royal-color-error: #9b2c2c;
+  --royal-color-disabled: #a3a3a3;
+  --royal-color-good: #187a33;
+  --royal-color-warn: #8f5f00;
+  --royal-color-series-1: #5b7cf5;
+  --royal-color-series-2: #d95926;
+  --royal-color-series-3: #199e70;
+  --royal-color-series-4: #c98500;
+  --royal-color-series-5: #d55181;
+  /* Font tokens read next/font variables. Put those classes on the root element, or redeclare these where they are set. */
+  --royal-font-display: var(--font-source-serif), Georgia, serif;
+  --royal-font-body: var(--font-instrument-sans), Arial, sans-serif;
+  --royal-font-button: var(--font-instrument-sans), Arial, sans-serif;
+  --royal-font-label: var(--font-instrument-sans), Arial, sans-serif;
+  --royal-font-code: var(--font-ibm-plex-mono), ui-monospace, monospace;
+  /* Spacing steps are multiples of 4px: --royal-space-3 is 12px. */
+  --royal-space-1: 4px;
+  --royal-space-2: 8px;
+  --royal-space-3: 12px;
+  --royal-space-4: 16px;
+  --royal-space-6: 24px;
+  --royal-space-8: 32px;
+  --royal-space-10: 40px;
+  --royal-space-12: 48px;
+  --royal-space-14: 56px;
+  --royal-weight-heading: 500;
+  --royal-text-display: 42px;
+  --royal-text-title: 32px;
+  --royal-text-heading: 24px;
+  --royal-text-subheading: 18px;
+  --royal-tracking-display: -0.05em;
+  --royal-tracking-title: -0.04em;
+  --royal-tracking-heading: -0.03em;
+  --royal-tracking-subheading: -0.015em;
+  --royal-leading-heading: 1.03;
+  --royal-text-body: 16px;
+  --royal-text-small: 12px;
+  --royal-text-label: 14px;
+  --royal-text-annotation: 12px;
+  --royal-text-nav: 16px;
+  --royal-radius-control: 6px;
+  --royal-radius-card: 10px;
+  --royal-radius-panel: 16px;
+  --royal-glass-button-blur: 12px;
+  --royal-glass-button-opacity: 78%;
+  --royal-glass-opacity: 68%;
+  --royal-glass-blur: 24px;
+  --royal-glass-reflection: 0.2;
+  --royal-color-glass-edge: color-mix(in srgb, var(--royal-color-paper) 48%, transparent);
+  --royal-color-glass-edge-soft: color-mix(in srgb, var(--royal-color-paper) 12%, transparent);
+  --royal-color-glass-shine: color-mix(in srgb, var(--royal-color-paper) 60%, transparent);
+  --royal-color-glass-shadow: color-mix(in srgb, var(--royal-color-ink) 18%, transparent);
+  --royal-color-glass-frosted: var(--royal-color-paper);
+  --royal-color-glass-smoked: var(--royal-color-ink);
+  --royal-color-glass-text-light: var(--royal-color-paper);
+  --royal-color-glass-text-dark: var(--royal-color-ink);
+  --royal-reflection-control-opacity: 0.04;
+  --royal-reflection-dark-opacity: 0.08;
+  --royal-reflection-swatch-opacity: 0.015;
+  --royal-reflection-panel-opacity: 0.03;
+  --royal-reflection-check-opacity: 0.16;
+  --royal-reflection-focus-opacity: 0.08;
+  --royal-color-reflection-shade: color-mix(in srgb, var(--royal-color-ink) 6%, transparent);
+  --royal-color-reflection-core: color-mix(in srgb, var(--royal-color-paper) 88%, transparent);
+  --royal-color-reflection-halo: color-mix(in srgb, var(--royal-color-paper) 40%, transparent);
+  --royal-color-reflection-edge: color-mix(in srgb, var(--royal-color-ink) 10%, transparent);
+  --royal-color-glass-clear: transparent;
+  --royal-shadow-highlight: inset 0 1px 0 var(--royal-color-control-highlight);
+  --royal-shadow-edge: inset 0 1px 0 var(--royal-color-glass-edge);
+  --royal-shadow-pressed: inset 0 1px 1px var(--royal-color-control-shadow);
+  --royal-shadow-inset: inset 0 1px 2px var(--royal-color-control-shadow);
+  --royal-shadow-inset-deep: inset 0 1px 2px var(--royal-color-glass-shadow);
+  --royal-shadow-key: 0 1px 1px var(--royal-color-glass-shadow);
+  --royal-shadow-control: 0 1px 2px var(--royal-color-control-shadow);
+  --royal-shadow-control-hover: 0 1px 3px var(--royal-color-control-shadow);
+  --royal-shadow-raised: 0 2px 6px var(--royal-color-glass-shadow);
+  --royal-shadow-overlay: 0 8px 24px var(--royal-color-glass-shadow);
+  --royal-shadow-panel: 0 20px 48px -12px var(--royal-color-glass-shadow);
+  --royal-shadow-dialog: 0 24px 64px var(--royal-color-glass-shadow);
+  --royal-shadow-focus: 0 0 0 1px var(--royal-color-focus);
+  --royal-shadow-focus-error: 0 0 0 1px var(--royal-color-error);
+  --royal-control-height: 34px;
+  --royal-ease-out: cubic-bezier(.22, 1, .36, 1);
+  --royal-dur-short: 120ms;
+  --royal-dur-check: 160ms;
+  --royal-dur-glimmer: 240ms;
+}
+
+/* Dark theme. Paper and ink swap, so anything mixed from them follows. The
+ * tokens below are the ones that cannot: text on a blue fill, blue used as
+ * text, and light and shadow, which stay light and dark in both themes.
+ */
+:root.dark {
+  --royal-color-paper: #101011;
+  --royal-color-ink: #f2f2f2;
+  --royal-color-muted: #a0a0a3;
+  --royal-color-rule: #29292b;
+  --royal-color-wash: #161617;
+  --royal-color-raised: #1e1e20;
+  --royal-color-faint: #85858a;
+  --royal-color-accent-hover: #3b68f0;
+  --royal-color-accent-text: #8aa4ff;
+  --royal-color-accent-text-hover: #adbfff;
+  --royal-color-focus: var(--royal-color-accent-text);
+  --royal-color-accent-field: color-mix(in srgb, var(--royal-color-accent) 6%, var(--royal-color-paper));
+  --royal-color-accent-soft: color-mix(in srgb, var(--royal-color-accent) 20%, var(--royal-color-paper));
+  --royal-color-accent-active: color-mix(in srgb, var(--royal-color-accent) 30%, var(--royal-color-paper));
+  --royal-color-accent-edge: color-mix(in srgb, var(--royal-color-accent) 44%, var(--royal-color-paper));
+  --royal-color-control-border: color-mix(in srgb, var(--royal-color-ink) 38%, var(--royal-color-paper));
+  --royal-color-track: color-mix(in srgb, var(--royal-color-ink) 22%, var(--royal-color-paper));
+  --royal-color-error: #ef6a61;
+  --royal-color-disabled: #5c5c60;
+  --royal-color-good: #3fb950;
+  --royal-color-warn: #fab219;
+  --royal-color-shadow: #000000;
+  --royal-color-control-shadow: color-mix(in srgb, var(--royal-color-shadow) 40%, transparent);
+  --royal-color-control-highlight: color-mix(in srgb, var(--royal-color-ink) 12%, transparent);
+  --royal-color-control-sheen: color-mix(in srgb, var(--royal-color-ink) 6%, transparent);
+  --royal-color-glass-edge: color-mix(in srgb, var(--royal-color-ink) 14%, transparent);
+  --royal-color-glass-edge-soft: color-mix(in srgb, var(--royal-color-ink) 6%, transparent);
+  --royal-color-glass-shine: color-mix(in srgb, var(--royal-color-ink) 30%, transparent);
+  --royal-color-glass-shadow: color-mix(in srgb, var(--royal-color-shadow) 50%, transparent);
+  --royal-color-glass-frosted: color-mix(in srgb, var(--royal-color-ink) 22%, var(--royal-color-paper));
+  --royal-color-glass-smoked: var(--royal-color-shadow);
+  --royal-color-glass-text-light: var(--royal-color-ink);
+  --royal-color-reflection-shade: color-mix(in srgb, var(--royal-color-shadow) 6%, transparent);
+  --royal-color-reflection-core: color-mix(in srgb, var(--royal-color-ink) 88%, transparent);
+  --royal-color-reflection-halo: color-mix(in srgb, var(--royal-color-ink) 40%, transparent);
+  --royal-color-reflection-edge: color-mix(in srgb, var(--royal-color-shadow) 10%, transparent);
+  --royal-reflection-control-opacity: 0.06;
+}
+
+/* Smaller screens step the two largest heading sizes down. */
+@media (max-width: 767px) {
+  :root { --royal-text-display: 32px; --royal-text-title: 28px; }
+}
