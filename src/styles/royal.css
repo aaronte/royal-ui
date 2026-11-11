@@ -26,16 +26,18 @@
  * unless an ancestor sets data-finish, which the specimen page uses to switch
  * it. The base rule has no specificity, so any utility class on a Button wins
  * over it, as it would over a rule loaded before Tailwind's utilities. */
-:where(.royal-button) { position: relative; min-height: var(--royal-control-height); border: 1px solid var(--royal-color-rule); background-image: none; font-family: var(--royal-font-button); overflow: hidden; }
+:where(.royal-button) { position: relative; min-height: var(--royal-control-height); border: 1px solid var(--royal-color-rule); background-image: none; color: var(--royal-color-ink); font-family: var(--royal-font-button); overflow: hidden; }
 .royal-button:where(.royal-primary,[aria-pressed='true'],[aria-current='page']) { background: var(--royal-color-accent); border-color: var(--royal-color-accent); color: var(--royal-color-on-accent); }
 .royal-button:where(:not([data-finish] *)) { box-shadow: var(--royal-shadow-control); }
+/* One step stronger than the disabled rule, so a disabled primary button keeps its shadow. */
+.royal-button:where(:not([data-finish] *)):is(.royal-primary,[aria-pressed='true'],[aria-current='page']) { background-image: none; box-shadow: var(--royal-shadow-control); }
 @media (hover: hover) and (pointer: fine) {
   .royal-button:not(:disabled):hover { border-color: color-mix(in srgb, var(--royal-color-accent) 60%, var(--royal-color-paper)); background-color: var(--royal-color-wash); }
   .royal-button:is(.royal-primary,[aria-pressed='true'],[aria-current='page']):not(:disabled):hover { background-color: var(--royal-color-accent-hover); border-color: var(--royal-color-accent-hover); }
   .royal-button:where(:not([data-finish] *)):is(.royal-primary,[aria-pressed='true'],[aria-current='page']):not(:disabled):hover { background-image: linear-gradient(180deg, var(--royal-color-control-sheen), var(--royal-color-glass-clear) 65%); box-shadow: var(--royal-shadow-highlight), var(--royal-shadow-control); }
 }
 .royal-button:active:not(:disabled) { transform: translateY(1px); }
-.royal-button:disabled { background: var(--royal-color-wash); background-image: none; border-color: var(--royal-color-rule); color: var(--royal-color-disabled); box-shadow: none; }
+:where(.royal-button):disabled { background: var(--royal-color-wash); background-image: none; border-color: var(--royal-color-rule); color: var(--royal-color-disabled); box-shadow: none; }
 /* Base. Every border defaults to the border colour, as in shadcn. The body
  * takes Royal's text, ground and line height, so overlays rendered into
  * <body> read the same as the page. */
@@ -44,9 +46,15 @@ body { background: var(--royal-color-paper); color: var(--royal-color-ink); font
 :is([data-slot],[data-royal-control]):focus-visible { outline: 1px solid var(--royal-color-focus); outline-offset: 2px; box-shadow: none; }
 :is([data-slot='card-title'],[data-slot='dialog-title'],[data-slot='alert-dialog-title'],[data-slot='sheet-title'],[data-slot='drawer-title']) { font-family: var(--royal-font-display); font-weight: var(--royal-weight-heading); letter-spacing: var(--royal-tracking-heading); line-height: var(--royal-leading-heading); font-style: normal; }
 :is([data-slot='card-title'],[data-slot='dialog-title'],[data-slot='alert-dialog-title'],[data-slot='sheet-title'],[data-slot='drawer-title']) { font-size: var(--royal-text-heading); letter-spacing: var(--royal-tracking-heading); }
-:is([role='menuitem'],[role='menuitemcheckbox'],[role='menuitemradio'],[role='option']) { font-family: var(--royal-font-body); font-size: var(--royal-text-label); }
-:is([data-slot$='description'],[data-slot$='label']) { font-size: var(--royal-text-label); }
+/* Royal's control text, on controls that are themselves components. */
+:is(button:where([data-slot]),input:where([data-slot]),textarea:where([data-slot]),select:where([data-slot]),label:where([data-slot]),[role='menuitem'],[role='menuitemcheckbox'],[role='menuitemradio'],[role='option']) { font-family: var(--royal-font-body); font-size: var(--royal-text-label); }
+/* No 12px text in components, apart from shortcuts, keys and table captions. */
+:is(.text-xs:where([data-slot]):where(:not([data-slot$='shortcut'],[data-slot='kbd'],[data-slot='table-caption'])), [data-slot$='description'],[data-slot$='label']) { font-size: var(--royal-text-label); }
 :is([data-slot$='shortcut'],[data-slot='kbd'],[data-slot='table-caption']) { font-size: var(--royal-text-small); }
+:is(a,button):where([data-slot]) { white-space: nowrap; }
+/* Links are royal blue. */
+a:where([data-slot]) { color: var(--royal-color-accent-text); text-decoration: none; }
+a:where([data-slot]):hover { color: var(--royal-color-accent-text-hover); }
 :is(input[data-slot],textarea[data-slot],select[data-slot],:is([data-slot='select-trigger'],[data-royal-control='select-trigger']),[data-slot='combobox-input']):focus-visible { outline: none; border-color: var(--royal-color-focus); box-shadow: var(--royal-shadow-focus); }
 :is(:is([data-slot='input'],[data-royal-control='input']),:is([data-slot='select-trigger'],[data-royal-control='select-trigger']),[data-slot='combobox-input'],[data-slot='native-select'],[data-slot='input-group']) { min-height: var(--royal-control-height); height: var(--royal-control-height); border-radius: var(--royal-radius-control); }
 [data-slot='native-select'] { padding-inline-end: 38px; }
@@ -82,7 +90,7 @@ body { background: var(--royal-color-paper); color: var(--royal-color-ink); font
 [data-slot='table-container'] { max-width: 100%; }
 @media (max-width: 767px) { [data-slot='dialog-content'], [data-slot='alert-dialog-content'] { max-width: calc(100vw - 32px); } }
 @media (prefers-reduced-transparency: reduce),(prefers-contrast: more) { [data-slot$='content'] { backdrop-filter: none; } }
-:is([role='menuitem'],[role='option']) { letter-spacing: normal; line-height: 1.5; }
+:is(button:where([data-slot]),input:where([data-slot]),textarea:where([data-slot]),select:where([data-slot]),label:where([data-slot]),[role='menuitem'],[role='option']) { letter-spacing: normal; line-height: 1.5; }
 [data-slot='accordion-trigger'] { font-weight: 500; }
 [data-slot="slider-thumb"]:hover { box-shadow: var(--royal-shadow-highlight),var(--royal-shadow-control); }
 :is(:is([data-slot="select-trigger"],[data-royal-control="select-trigger"]),[data-slot="native-select"])[data-size="sm"] { height: 30px; min-height: 30px; }
@@ -106,7 +114,8 @@ body { background: var(--royal-color-paper); color: var(--royal-color-ink); font
 .royal-radio-dot { display: block; width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
 @media (prefers-reduced-motion: reduce) { [data-slot='switch-thumb'] { transition: none; } }
 :is([data-slot='switch'],[data-royal-control='switch'])[data-size='default'] { width: 32px; height: 20px; }
-@media (prefers-reduced-transparency: reduce),(prefers-contrast: more) { :root { --popover: var(--royal-color-paper); } .dark { --popover: var(--royal-color-raised); } }
+/* One step stronger than a project's own :root and .dark blocks, which come after this file. */
+@media (prefers-reduced-transparency: reduce),(prefers-contrast: more) { :root:not(.dark) { --popover: var(--royal-color-paper); } :root.dark { --popover: var(--royal-color-raised); } }
 /* The generated blue text utility resolves to the fill colour. Text takes the text step, which is lighter in dark. */
 .text-primary { color: var(--royal-color-accent-text); }
 [class*='hover]:text-primary'] > a:hover { color: var(--royal-color-accent-text-hover); }
