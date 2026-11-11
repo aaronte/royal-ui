@@ -1,5 +1,6 @@
 /* Tailwind's theme and base reset are layered. Everything else is not:
- * page styles, then utilities, then Royal's overrides, so the order and each
+ * page styles, then utilities, then Royal's overrides and the catalog's own
+ * rules, so the order and each
  * selector's strength decide, as they do against the CSS that Sonner and Vaul
  * inject at runtime. Scope classes are wrapped in :where() so they add no
  * strength of their own.
@@ -12,6 +13,7 @@
 @import "tw-animate-css";
 @import "../styles/tokens.css";
 @import "../styles/royal.css";
+@import "../styles/catalog.css";
 
 @theme inline {
  --color-background: var(--background);
