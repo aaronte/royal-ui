@@ -40,7 +40,7 @@ Written 2026-11-10 in aaronte.com, where Royal started at `/design-system`. It m
 - [ ] Package glass as registry items: the material classes from `Materials.tsx` and the `PointerReflection` component. Keep its `prefers-reduced-motion` check and the `@supports` fallback for browsers that cannot blur a backdrop.
 - [x] Remove `DesignPortalContext` from the 12 overlay components. Global tokens make it unnecessary. Unblocked in royal-ui. Found 2026-11-10 in aaronte.com: an overlay portalled to `body` leaves `.ds-library`, so none of the generated utilities match it. Do it in the new repo with the item above. Done 2026-11-11: overlays render into `<body>`. The specimen writes every edited token to `<html>`, so overlays follow the pickers. Overlays match the old captures pixel for pixel.
 - [x] Clean the 8 modified components: `button`, `checkbox`, `input`, `radio-group`, `select`, `sonner`, `switch`, `textarea`. Standard `cn` import path, `ds-` class names renamed. Done 2026-11-10. The `cn` import was already standard: `cn` is shadcn's npm package, and the upstream registry lists it as a dependency. The names the components rely on are now `royal-button`, `royal-primary`, `royal-radio-dot`, `royal-checkbox-mark`, `royal-checkbox-mixed-mark` and `data-royal-control`. Page layout classes keep `ds-`.
-- [ ] Move the combobox off `@base-ui/react`, or accept it as the one Base UI dependency. It is the only component not on Radix.
+- [x] Move the combobox off `@base-ui/react`, or accept it as the one Base UI dependency. It is the only component not on Radix. Accepted 2026-11-11: the combobox keeps `@base-ui/react`, and its registry item lists it as a dependency.
 
 ## 3. Example content
 
@@ -49,14 +49,14 @@ Written 2026-11-10 in aaronte.com, where Royal started at `/design-system`. It m
 - [x] Replace the `ui.shadcn.com` links with `#` and the shadcn names in the navigation menu, input group and attachment examples. Done 2026-11-10: 12 links, and the visible text now reads Royal, `@royal` and `aaronte.com/royal-ui`.
 - [x] Rewrite the stock sample copy. Done 2026-11-10 in 17 example files: the accordion, alerts, alert dialog, sign in card, profile forms, typography article, navigation menu and sidebar text, and every shadcn or Radix team name.
 - [ ] Optional: the neutral sample data is still shadcn's (invoice rows, fruit list, framework list, the "Move Goal" drawer, the bug report form). Replace it if the catalog should share nothing with shadcn's docs.
-- [ ] Keep `LICENSE.md`. The component source is MIT and the notice has to stay.
+- [x] Keep `LICENSE.md`. The component source is MIT and the notice has to stay. Kept at `docs/shadcn/LICENSE.md`.
 
 ## 4. Registry
 
-- [ ] Write `registry.json`: one theme item (tokens, shadcn variable mapping, override stylesheet) and one item per modified component.
-- [ ] List each item's dependencies, using `design/shadcn/registry-manifest.json`.
-- [ ] Add a `shadcn build` script that writes to `public/r/`.
-- [ ] Install from the local build into a scratch Tailwind 4 and shadcn project, and compare it to the catalog.
+- [x] Write `registry.json`: one theme item (tokens, shadcn variable mapping, override stylesheet) and one item per modified component. Done 2026-11-11. `scripts/registry.mjs` writes it from the source: the `royal` theme item, three font items, the `use-mobile` hook, and all 64 components, not only the modified ones, so a project gets the tested source.
+- [x] List each item's dependencies, using `design/shadcn/registry-manifest.json`. Done 2026-11-11, read from each file's imports rather than the manifest, so they can't drift. Versions come from `package.json`.
+- [x] Add a `shadcn build` script that writes to `public/r/`. Done 2026-11-11: `npm run registry`. GitHub serves `public/r` as raw files, so the registry works before any deploy.
+- [x] Install from the local build into a scratch Tailwind 4 and shadcn project, and compare it to the catalog. Done 2026-11-11 in a new Next.js 16.4 app after `shadcn init -b radix` with the Nova preset. All 64 components install, typecheck and build. For each of the 67 examples, every component element has the same computed styles as in the catalog, in light and dark. Getting there moved the rules components relied on from the catalog into `royal.css`, and made the theme set the dark variant. Known issue: the questionnaire loops in `next dev` with `cacheComponents` on; production is fine.
 
 ## 5. New repo
 
@@ -65,16 +65,16 @@ Written 2026-11-10 in aaronte.com, where Royal started at `/design-system`. It m
 - [x] Run on Tailwind 4 only. Drop `scripts/design-ui.mjs` and the 7,529-line `catalog.generated.css`. Done 2026-11-10. Against aaronte.com, 128 of 136 catalog and page screenshots are pixel-identical in both themes, and all 15 overlays match apart from placeholder text. The differences left come from Tailwind 4's base reset: placeholder text is ink at 50% instead of Tailwind 3's `#9ca3af`, and table header cells lose the browser's 1px padding, so the calendar is 2px shorter. Two things on the old page were side effects: the site's Tailwind 3 build also styled the catalog (its `space-y` rules), and the page's margin reset outranked Tailwind 4's `space-y`. The reset is removed, since Tailwind 4's base reset already does it.
 - [ ] Split `DesignSystem.tsx` into readable files and rename the `editorial-system-v1` storage key.
 - [ ] Fix stale wording: "midnight navy" in `design-system.css`, "navy tokens" in `QA.md`, Georgia in `.hallmark/preflight.json`, and "editorial system" throughout.
-- [ ] Add CI: typecheck, lint, registry build.
-- [ ] Write a README with the install commands. Started 2026-11-10: the README explains how to run the specimen and where things are. Install commands wait for the registry.
+- [x] Add CI: typecheck, lint, registry build. Done 2026-11-11: `.github/workflows/ci.yml`. It also fails if `registry.json` or `public/r` don't match the source.
+- [x] Write a README with the install commands. Started 2026-11-10: the README explains how to run the specimen and where things are. Install commands wait for the registry. Done 2026-11-11.
 - [ ] Optional: reserve `royal-ui` on npm.
 
 ## 6. Deploy
 
-- [ ] Create a Vercel project for the repo and set `basePath: '/royal-ui'` in its Next config.
+- [ ] Create a Vercel project for the repo and set `basePath: '/royal-ui'` in its Next config. Not needed for installing: the registry is served from GitHub. Still needed for the docs site at `aaronte.com/royal-ui`.
 - [ ] In this repo, add a rewrite in `next.config.js` from `/royal-ui/:path*` to that project. aaronte.com is on Vercel and already has a `rewrites()` block.
 - [ ] Remove `noindex` from the docs page, if it should be public.
-- [ ] Confirm `https://aaronte.com/royal-ui/r/button.json` returns the built item.
+- [ ] Confirm `https://aaronte.com/royal-ui/r/button.json` returns the built item. Until then, `https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/button.json` is the live URL.
 
 ## 7. First consumer
 
