@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useDesignPortalContainer } from "@/lib/portal"
 import { cn } from "cn"
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react"
 import { Menubar as MenubarPrimitive } from "radix-ui"
@@ -37,7 +36,7 @@ function MenubarGroup({
 function MenubarPortal({
   ...props
 }: React.ComponentProps<typeof MenubarPrimitive.Portal>) {
-  return <DesignPortal data-slot="menubar-portal" {...props} />
+  return <MenubarPrimitive.Portal data-slot="menubar-portal" {...props} />
 }
 
 function MenubarRadioGroup({
@@ -273,9 +272,4 @@ export {
   MenubarSub,
   MenubarSubTrigger,
   MenubarSubContent,
-}
-
-function DesignPortal(props: React.ComponentProps<typeof MenubarPrimitive.Portal>) {
-  const container = useDesignPortalContainer()
-  return <MenubarPrimitive.Portal {...props} container={props.container ?? container ?? undefined} />
 }

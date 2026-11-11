@@ -8,13 +8,12 @@ Source: official shadcn registry, retrieved 2026-11-08. See `registry-manifest.j
 
 Import components from `@/components/ui/<name>`. Their upstream exports, variant props, controlled/uncontrolled behavior, render/asChild composition, and primitive accessibility features are retained. The default styling is Royal: the tokens in `src/styles/tokens.css` and the overrides in `src/styles/royal.css`. Destructive variants use the named `--royal-color-error` token; charts use the five `--royal-color-series-N` colours in both themes.
 
-Portals use `DesignPortalContext` so menus, tooltips, dialogs, and sheets inherit the page typography and tokens. A caller-provided portal `container` still takes precedence. When composing a new catalog surface, supply the context with an element inside `.editorial-system .ds-library`, and wrap tooltip consumers in `TooltipProvider`. Sonner's Toaster is mounted once inside that scope.
+Overlays (menus, tooltips, dialogs, sheets) render into `<body>` through each primitive's own portal, as upstream does. Royal's tokens and the shadcn variable mapping sit at `:root`, so they apply there. Wrap tooltip consumers in `TooltipProvider`.
 
 The source was adapted in these narrow ways:
 
 - Imports point to this library, and the registry's multi-library icon placeholder resolves to Lucide.
-- Portal wrappers read the scoped container.
-- Buttons share the specimen button classes and material finishes; sizes and variants remain available.
+- Buttons add `royal-button` (and `royal-primary` on the default variant) for Royal's border, shadow and hover. Sizes and variants remain available.
 - The field-error iterator uses `Array.from` for this project's TypeScript target. Slider labels are forwarded to individual thumbs so their values are named for assistive technology.
 - Example-only AI backend calls were replaced with local specimens for Message, Message Scroller, and Trace. These components accept their original props; the page does not connect to an AI service.
 - Examples use local tokens, project-compatible links, and the current DayPicker `autoFocus` prop.

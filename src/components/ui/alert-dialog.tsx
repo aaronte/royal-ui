@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useDesignPortalContainer } from "@/lib/portal"
 import { cn } from "cn"
 import { AlertDialog as AlertDialogPrimitive } from "radix-ui"
 
@@ -25,7 +24,7 @@ function AlertDialogPortal({
   ...props
 }: React.ComponentProps<typeof AlertDialogPrimitive.Portal>) {
   return (
-    <DesignPortal data-slot="alert-dialog-portal" {...props} />
+    <AlertDialogPrimitive.Portal data-slot="alert-dialog-portal" {...props} />
   )
 }
 
@@ -194,9 +193,4 @@ export {
   AlertDialogPortal,
   AlertDialogTitle,
   AlertDialogTrigger,
-}
-
-function DesignPortal(props: React.ComponentProps<typeof AlertDialogPrimitive.Portal>) {
-  const container = useDesignPortalContainer()
-  return <AlertDialogPrimitive.Portal {...props} container={props.container ?? container ?? undefined} />
 }

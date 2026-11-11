@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useDesignPortalContainer } from "@/lib/portal"
 import { cn } from "cn"
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react"
 import { ContextMenu as ContextMenuPrimitive } from "radix-ui"
@@ -32,7 +31,7 @@ function ContextMenuPortal({
   ...props
 }: React.ComponentProps<typeof ContextMenuPrimitive.Portal>) {
   return (
-    <DesignPortal data-slot="context-menu-portal" {...props} />
+    <ContextMenuPrimitive.Portal data-slot="context-menu-portal" {...props} />
   )
 }
 
@@ -98,7 +97,7 @@ function ContextMenuContent({
   ...props
 }: React.ComponentProps<typeof ContextMenuPrimitive.Content>) {
   return (
-    <DesignPortal>
+    <ContextMenuPrimitive.Portal>
       <ContextMenuPrimitive.Content
         data-slot="context-menu-content"
         className={cn(
@@ -107,7 +106,7 @@ function ContextMenuContent({
         )}
         {...props}
       />
-    </DesignPortal>
+    </ContextMenuPrimitive.Portal>
   )
 }
 
@@ -249,9 +248,4 @@ export {
   ContextMenuSubContent,
   ContextMenuSubTrigger,
   ContextMenuRadioGroup,
-}
-
-function DesignPortal(props: React.ComponentProps<typeof ContextMenuPrimitive.Portal>) {
-  const container = useDesignPortalContainer()
-  return <ContextMenuPrimitive.Portal {...props} container={props.container ?? container ?? undefined} />
 }

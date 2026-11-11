@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useDesignPortalContainer } from "@/lib/portal"
 import { cn } from "cn"
 import { CheckIcon, ChevronRightIcon, CircleIcon } from "lucide-react"
 import { DropdownMenu as DropdownMenuPrimitive } from "radix-ui"
@@ -16,7 +15,7 @@ function DropdownMenuPortal({
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Portal>) {
   return (
-    <DesignPortal data-slot="dropdown-menu-portal" {...props} />
+    <DropdownMenuPrimitive.Portal data-slot="dropdown-menu-portal" {...props} />
   )
 }
 
@@ -37,7 +36,7 @@ function DropdownMenuContent({
   ...props
 }: React.ComponentProps<typeof DropdownMenuPrimitive.Content>) {
   return (
-    <DesignPortal>
+    <DropdownMenuPrimitive.Portal>
       <DropdownMenuPrimitive.Content
         data-slot="dropdown-menu-content"
         sideOffset={sideOffset}
@@ -47,7 +46,7 @@ function DropdownMenuContent({
         )}
         {...props}
       />
-    </DesignPortal>
+    </DropdownMenuPrimitive.Portal>
   )
 }
 
@@ -254,9 +253,4 @@ export {
   DropdownMenuSub,
   DropdownMenuSubTrigger,
   DropdownMenuSubContent,
-}
-
-function DesignPortal(props: React.ComponentProps<typeof DropdownMenuPrimitive.Portal>) {
-  const container = useDesignPortalContainer()
-  return <DropdownMenuPrimitive.Portal {...props} container={props.container ?? container ?? undefined} />
 }

@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useDesignPortalContainer } from "@/lib/portal"
 import { cn } from "cn"
 import { Drawer as DrawerPrimitive } from "vaul"
 
@@ -20,7 +19,7 @@ function DrawerTrigger({
 function DrawerPortal({
   ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Portal>) {
-  return <DesignPortal data-slot="drawer-portal" {...props} />
+  return <DrawerPrimitive.Portal data-slot="drawer-portal" {...props} />
 }
 
 function DrawerClose({
@@ -132,9 +131,4 @@ export {
   DrawerFooter,
   DrawerTitle,
   DrawerDescription,
-}
-
-function DesignPortal(props: React.ComponentProps<typeof DrawerPrimitive.Portal>) {
-  const container = useDesignPortalContainer()
-  return <DrawerPrimitive.Portal {...props} container={props.container ?? container ?? undefined} />
 }

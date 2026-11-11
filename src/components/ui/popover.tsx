@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useDesignPortalContainer } from "@/lib/portal"
 import { cn } from "cn"
 import { Popover as PopoverPrimitive } from "radix-ui"
 
@@ -24,7 +23,7 @@ function PopoverContent({
   ...props
 }: React.ComponentProps<typeof PopoverPrimitive.Content>) {
   return (
-    <DesignPortal>
+    <PopoverPrimitive.Portal>
       <PopoverPrimitive.Content
         data-slot="popover-content"
         align={align}
@@ -35,7 +34,7 @@ function PopoverContent({
         )}
         {...props}
       />
-    </DesignPortal>
+    </PopoverPrimitive.Portal>
   )
 }
 
@@ -86,9 +85,4 @@ export {
   PopoverHeader,
   PopoverTitle,
   PopoverDescription,
-}
-
-function DesignPortal(props: React.ComponentProps<typeof PopoverPrimitive.Portal>) {
-  const container = useDesignPortalContainer()
-  return <PopoverPrimitive.Portal {...props} container={props.container ?? container ?? undefined} />
 }

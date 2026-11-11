@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useDesignPortalContainer } from "@/lib/portal"
 import { cn } from "cn"
 import { XIcon } from "lucide-react"
 import { Dialog as SheetPrimitive } from "radix-ui"
@@ -25,7 +24,7 @@ function SheetClose({
 function SheetPortal({
   ...props
 }: React.ComponentProps<typeof SheetPrimitive.Portal>) {
-  return <DesignPortal data-slot="sheet-portal" {...props} />
+  return <SheetPrimitive.Portal data-slot="sheet-portal" {...props} />
 }
 
 function SheetOverlay({
@@ -140,9 +139,4 @@ export {
   SheetFooter,
   SheetTitle,
   SheetDescription,
-}
-
-function DesignPortal(props: React.ComponentProps<typeof SheetPrimitive.Portal>) {
-  const container = useDesignPortalContainer()
-  return <SheetPrimitive.Portal {...props} container={props.container ?? container ?? undefined} />
 }

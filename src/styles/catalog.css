@@ -1,22 +1,23 @@
-/* Catalog only: conventions for the example markup on the specimen page. Royal components are styled in royal.css. */
-:where(.ds-library) { min-width: 0; color: var(--foreground); font-family: var(--royal-font-body); font-size: var(--royal-text-body); line-height: 1.5; }
-:where(.ds-library) *, :where(.ds-library) ::before, :where(.ds-library) ::after { border-color: var(--border); }
-:where(.ds-library) :is(h1,h2,h3,h4,h5,h6,[data-slot='card-title'],[data-slot='dialog-title'],[data-slot='alert-dialog-title'],[data-slot='sheet-title'],[data-slot='drawer-title']) { font-family: var(--royal-font-display); font-weight: var(--royal-weight-heading); letter-spacing: var(--royal-tracking-heading); line-height: var(--royal-leading-heading); font-style: normal; }
-:where(.ds-library) h1 { font-size: var(--royal-text-title); letter-spacing: var(--royal-tracking-title); }
-:where(.ds-library) h2 { font-size: var(--royal-text-heading); letter-spacing: var(--royal-tracking-heading); }
-:where(.ds-library) h3 { font-size: var(--royal-text-subheading); letter-spacing: var(--royal-tracking-subheading); }
-:where(.ds-library) h4 { font-size: var(--royal-text-body); letter-spacing: var(--royal-tracking-subheading); }
-:where(.ds-library) :is(button,input,textarea,select,label,[role='menuitem'],[role='menuitemcheckbox'],[role='menuitemradio'],[role='option']) { font-family: var(--royal-font-body); font-size: var(--royal-text-label); }
-:where(.ds-library) :is(.text-xs:where(:not([data-slot$='shortcut'],[data-slot='kbd'],[data-slot='table-caption'])), [data-slot$='description'],[data-slot$='label']) { font-size: var(--royal-text-label); }
-:where(.ds-library) :is(a,button) { white-space: nowrap; }
-:where(.ds-library) a { text-decoration: none; }
-:where(.ds-library) :is(button,a,input,select,textarea,[tabindex]):focus-visible { outline: 1px solid var(--royal-color-focus); outline-offset: 2px; box-shadow: none; }
-:where(.ds-library) :is(input,textarea,select,:is([data-slot='select-trigger'],[data-royal-control='select-trigger']),[data-slot='combobox-input']):focus-visible { outline: none; border-color: var(--royal-color-focus); box-shadow: var(--royal-shadow-focus); }
+/* Catalog only: conventions for the example markup on the specimen page. Royal components are styled in royal.css.
+ * The scope includes the children of <body> other than <main>, where overlays render. */
+:where(.ds-library, body > :not(main, script, nextjs-portal)) { min-width: 0; color: var(--foreground); font-family: var(--royal-font-body); font-size: var(--royal-text-body); line-height: 1.5; }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) *, :where(.ds-library, body > :not(main, script, nextjs-portal)) ::before, :where(.ds-library, body > :not(main, script, nextjs-portal)) ::after { border-color: var(--border); }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) :is(h1,h2,h3,h4,h5,h6,[data-slot='card-title'],[data-slot='dialog-title'],[data-slot='alert-dialog-title'],[data-slot='sheet-title'],[data-slot='drawer-title']) { font-family: var(--royal-font-display); font-weight: var(--royal-weight-heading); letter-spacing: var(--royal-tracking-heading); line-height: var(--royal-leading-heading); font-style: normal; }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) h1 { font-size: var(--royal-text-title); letter-spacing: var(--royal-tracking-title); }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) h2 { font-size: var(--royal-text-heading); letter-spacing: var(--royal-tracking-heading); }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) h3 { font-size: var(--royal-text-subheading); letter-spacing: var(--royal-tracking-subheading); }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) h4 { font-size: var(--royal-text-body); letter-spacing: var(--royal-tracking-subheading); }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) :is(button,input,textarea,select,label,[role='menuitem'],[role='menuitemcheckbox'],[role='menuitemradio'],[role='option']) { font-family: var(--royal-font-body); font-size: var(--royal-text-label); }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) :is(.text-xs:where(:not([data-slot$='shortcut'],[data-slot='kbd'],[data-slot='table-caption'])), [data-slot$='description'],[data-slot$='label']) { font-size: var(--royal-text-label); }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) :is(a,button) { white-space: nowrap; }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) a { text-decoration: none; }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) :is(button,a,input,select,textarea,[tabindex]):focus-visible { outline: 1px solid var(--royal-color-focus); outline-offset: 2px; box-shadow: none; }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) :is(input,textarea,select,:is([data-slot='select-trigger'],[data-royal-control='select-trigger']),[data-slot='combobox-input']):focus-visible { outline: none; border-color: var(--royal-color-focus); box-shadow: var(--royal-shadow-focus); }
 @media (max-width: 767px) { .ds-catalog-layout { grid-template-columns: minmax(0,1fr); gap: 24px; } .ds-catalog-list { max-height: 160px; grid-template-columns: repeat(2,minmax(0,1fr)); } .ds-catalog-list button { overflow: hidden; text-overflow: ellipsis; } .ds-catalog-preview { padding: 16px; } }
-@media (prefers-reduced-motion: reduce) { :where(.ds-library) *, :where(.ds-library) ::before, :where(.ds-library) ::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
-:where(.ds-library) :is(button,input,textarea,select,label,[role='menuitem'],[role='option']) { letter-spacing: normal; line-height: 1.5; }
-:where(.ds-library) .ds-example > h4 { font-family: var(--royal-font-body); font-size: var(--royal-text-label); font-weight: 500; letter-spacing: normal; line-height: 1.5; }
-:where(.ds-library) :is(h4,h5,h6).text-sm { font-family: var(--royal-font-body); font-weight: 500; letter-spacing: normal; line-height: 1.5; }
-:where(.ds-library) [hidden]:not([hidden='until-found']) { display: none !important; }
-:where(.ds-library) :is(input,textarea)[readonly] { color: var(--royal-color-muted); background: var(--royal-color-wash); }
-:where(.ds-library) .ds-catalog-heading h3 { font-family: var(--royal-font-label); font-size: var(--royal-text-section); font-weight: 500; letter-spacing: var(--royal-tracking-section); line-height: 1.3; }
+@media (prefers-reduced-motion: reduce) { :where(.ds-library, body > :not(main, script, nextjs-portal)) *, :where(.ds-library, body > :not(main, script, nextjs-portal)) ::before, :where(.ds-library, body > :not(main, script, nextjs-portal)) ::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) :is(button,input,textarea,select,label,[role='menuitem'],[role='option']) { letter-spacing: normal; line-height: 1.5; }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) .ds-example > h4 { font-family: var(--royal-font-body); font-size: var(--royal-text-label); font-weight: 500; letter-spacing: normal; line-height: 1.5; }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) :is(h4,h5,h6).text-sm { font-family: var(--royal-font-body); font-weight: 500; letter-spacing: normal; line-height: 1.5; }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) [hidden]:not([hidden='until-found']) { display: none !important; }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) :is(input,textarea)[readonly] { color: var(--royal-color-muted); background: var(--royal-color-wash); }
+:where(.ds-library, body > :not(main, script, nextjs-portal)) .ds-catalog-heading h3 { font-family: var(--royal-font-label); font-size: var(--royal-text-section); font-weight: 500; letter-spacing: var(--royal-tracking-section); line-height: 1.3; }
