@@ -63,8 +63,7 @@ export default function DesignSystem() {
   }
 
   async function copyTokens() {
-    const tokens = Object.entries({ ...colours, ...style }).filter(([key]) => key.startsWith('--royal-'))
-    const value = `:root${dark ? '.dark' : ''} {\n${tokens.map(([key, value]) => `  ${key}: ${value};`).join('\n')}\n}`
+    const value = `:root${dark ? '.dark' : ''} {\n${Object.entries(tokens).map(([key, value]) => `  ${key}: ${value};`).join('\n')}\n}`
     try { await navigator.clipboard.writeText(value); setCopyState('Copied ✓') } catch { setCopyState('Copy unavailable'); setNotice('Clipboard access is unavailable in this browser.') }
     if (timer.current) clearTimeout(timer.current)
     timer.current = setTimeout(() => setCopyState('Copy tokens'), 2500)
@@ -72,21 +71,9 @@ export default function DesignSystem() {
 
   const dark = settings.theme === 'Dark'
   const palette = dark ? settings.dark : settings
-  // Colours go on the root element with the tokens, so the colours mixed from them follow an edit.
-  const colours = Object.fromEntries(colourTokens.map(token => [`--royal-color-${token}`, palette[token]]))
-  const colourKey = JSON.stringify(colours)
-  useLayoutEffect(() => {
-    const root = document.documentElement
-    const values: Record<string, string> = JSON.parse(colourKey)
-    Object.entries(values).forEach(([key, value]) => root.style.setProperty(key, value))
-    root.classList.toggle('dark', dark)
-    return () => {
-      Object.keys(values).forEach(key => root.style.removeProperty(key))
-      root.classList.remove('dark')
-    }
-  }, [colourKey, dark])
-  // Fonts are also set on the page so the font picker can change them.
-  const style = {
+  // Every edited token goes on the root element. Colours mixed from them follow an edit, and overlays rendered into <body> see the same values as the page.
+  const tokens: Record<string, string> = {
+    ...Object.fromEntries(colourTokens.map(token => [`--royal-color-${token}`, palette[token]])),
     '--royal-font-display': fontChoices[settings.display],
     '--royal-font-button': fontChoices[settings.buttonFont],
     '--royal-text-body': `${settings.size}px`,
@@ -95,8 +82,19 @@ export default function DesignSystem() {
     '--royal-font-body': settings.type === 'Instrument Sans' ? fontChoices['Instrument Sans'] : settings.type === 'Serif' ? "Georgia, 'Times New Roman', serif" : 'var(--font-google-sans), Arial, sans-serif',
     '--royal-radius-control': settings.corners === 'Square' ? '0px' : '6px',
     '--royal-control-height': settings.density === 'Compact' ? '34px' : '40px',
-    '--specimen-gap': settings.density === 'Compact' ? '16px' : '24px',
-  } as CSSProperties
+  }
+  const tokenKey = JSON.stringify(tokens)
+  useLayoutEffect(() => {
+    const root = document.documentElement
+    const values: Record<string, string> = JSON.parse(tokenKey)
+    Object.entries(values).forEach(([key, value]) => root.style.setProperty(key, value))
+    root.classList.toggle('dark', dark)
+    return () => {
+      Object.keys(values).forEach(key => root.style.removeProperty(key))
+      root.classList.remove('dark')
+    }
+  }, [tokenKey, dark])
+  const style = { '--specimen-gap': settings.density === 'Compact' ? '16px' : '24px' } as CSSProperties
 
   return <main className="editorial-system" data-display={settings.display} data-finish={settings.finish} style={style}>
     <PointerReflection />

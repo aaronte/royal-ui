@@ -1,7 +1,6 @@
 "use client"
 import dynamic from "next/dynamic"
 import { useState, useRef, useEffect } from "react"
-import { DesignPortalContext } from "@/lib/portal"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { Toaster } from "@/components/ui/sonner"
 const components = [
@@ -76,13 +75,12 @@ const components = [
 export default function ComponentCatalog({ theme = "light" }: { theme?: "light" | "dark" }) {
  const [query, setQuery] = useState("")
  const [selected, setSelected] = useState("accordion")
- const [container, setContainer] = useState<HTMLDivElement | null>(null)
  const preview = useRef<HTMLDivElement>(null)
  const active = components.find(item => item.id === selected)!
  const matches = components.filter(item => item.label.toLowerCase().includes(query.toLowerCase()))
  useEffect(() => { if (preview.current) preview.current.scrollTop = 0 }, [selected])
- return <div className="ds-library" ref={setContainer}>
-  <DesignPortalContext.Provider value={container}><TooltipProvider>
+ return <div className="ds-library">
+  <TooltipProvider>
    <div className="ds-catalog-layout">
     <aside className="ds-catalog-index" aria-label="Component catalog">
      <label htmlFor="component-search">Find a component <span>{components.length}</span></label>
@@ -96,6 +94,6 @@ export default function ComponentCatalog({ theme = "light" }: { theme?: "light" 
     </div>
    </div>
    <Toaster theme={theme} position="bottom-right" />
-  </TooltipProvider></DesignPortalContext.Provider>
+  </TooltipProvider>
  </div>
 }

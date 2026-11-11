@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useDesignPortalContainer } from "@/lib/portal"
 import { cn } from "cn"
 import { HoverCard as HoverCardPrimitive } from "radix-ui"
 
@@ -26,7 +25,7 @@ function HoverCardContent({
   ...props
 }: React.ComponentProps<typeof HoverCardPrimitive.Content>) {
   return (
-    <DesignPortal data-slot="hover-card-portal">
+    <HoverCardPrimitive.Portal data-slot="hover-card-portal">
       <HoverCardPrimitive.Content
         data-slot="hover-card-content"
         align={align}
@@ -37,13 +36,8 @@ function HoverCardContent({
         )}
         {...props}
       />
-    </DesignPortal>
+    </HoverCardPrimitive.Portal>
   )
 }
 
 export { HoverCard, HoverCardTrigger, HoverCardContent }
-
-function DesignPortal(props: React.ComponentProps<typeof HoverCardPrimitive.Portal>) {
-  const container = useDesignPortalContainer()
-  return <HoverCardPrimitive.Portal {...props} container={props.container ?? container ?? undefined} />
-}

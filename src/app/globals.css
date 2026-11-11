@@ -1,19 +1,18 @@
-/* Tailwind's theme and base reset are layered. Everything else is not:
- * page styles, then utilities, then Royal's overrides and the catalog's own
- * rules, so the order and each
- * selector's strength decide, as they do against the CSS that Sonner and Vaul
- * inject at runtime. Scope classes are wrapped in :where() so they add no
- * strength of their own.
+/* Tailwind's own layers, in order. The specimen page's styles sit in the
+ * utilities layer ahead of Tailwind's utilities; Royal's component rules
+ * (royal.css) and the catalog's rules follow them. A consuming project imports
+ * Tailwind the usual way and then tokens.css and royal.css, which gives Royal
+ * the same place in the cascade as here.
  */
-@layer theme, base;
+@layer theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/preflight.css" layer(base);
-@import "../styles/specimen.css";
-@import "tailwindcss/utilities.css";
+@import "../styles/specimen.css" layer(utilities);
+@import "tailwindcss/utilities.css" layer(utilities);
 @import "tw-animate-css";
 @import "../styles/tokens.css";
 @import "../styles/royal.css";
-@import "../styles/catalog.css";
+@import "../styles/catalog.css" layer(utilities);
 
 @theme inline {
  --color-background: var(--background);

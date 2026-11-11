@@ -46,13 +46,10 @@ html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; 
 :where(.editorial-system)[data-finish='Reflective'] .royal-button { background-image: none; box-shadow: var(--royal-shadow-control); }
 :where(.editorial-system)[data-finish='Reflective'] .royal-button:is(.royal-primary,[aria-pressed='true'],[aria-current='page']) { background-image: none; box-shadow: var(--royal-shadow-control); }
 @media (hover: hover) and (pointer: fine) {
-  :where(.editorial-system) .royal-button:not(:disabled):hover { border-color: color-mix(in srgb, var(--royal-color-accent) 60%, var(--royal-color-paper)); background-color: var(--royal-color-wash); }
   :where(.editorial-system)[data-finish='Reflective'] .royal-button:not(:disabled):hover { background-image: none; box-shadow: var(--royal-shadow-control); }
-  :where(.editorial-system) .royal-button:is(.royal-primary,[aria-pressed='true'],[aria-current='page']):not(:disabled):hover { background-color: var(--royal-color-accent-hover); border-color: var(--royal-color-accent-hover); }
   :where(.editorial-system)[data-finish='Reflective'] .royal-button:is(.royal-primary,[aria-pressed='true'],[aria-current='page']):not(:disabled):hover { background-image: linear-gradient(180deg, var(--royal-color-control-sheen), var(--royal-color-glass-clear) 65%); box-shadow: var(--royal-shadow-highlight), var(--royal-shadow-control); }
 }
-:where(.editorial-system) .royal-button:active:not(:disabled), .ds-text-button:active { transform: translateY(1px); }
-:where(.editorial-system) .royal-button:disabled { background: var(--royal-color-wash); background-image: none; border-color: var(--royal-color-rule); color: var(--royal-color-disabled); box-shadow: none; }
+.ds-text-button:active { transform: translateY(1px); }
 .ds-text-button { display: inline-flex; align-items: center; min-height: var(--royal-control-height); padding: 6px 0; border: 0; background: none; text-decoration: underline; text-underline-offset: 4px; white-space: nowrap; }
 .ds-text-button:hover { color: var(--royal-color-accent-text-hover); }
 .ds-inline-link { font-size: var(--royal-text-label); white-space: nowrap; }

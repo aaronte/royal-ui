@@ -30,7 +30,8 @@ export default function PointerReflection() {
   useEffect(() => {
     const frame = surface.current
     const beam = light.current
-    const root = frame?.closest('dialog, main')
+    // Overlays render into <body>, so the page's reflection listens there. One inside a <dialog> listens to that dialog.
+    const root = frame?.closest('dialog') ?? document.body
     if (!frame || !beam || !root) return
 
     const finePointer = matchMedia('(hover: hover) and (pointer: fine)')

@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useDesignPortalContainer } from "@/lib/portal"
 import { cn } from "cn"
 import { XIcon } from "lucide-react"
 import { Dialog as DialogPrimitive } from "radix-ui"
@@ -23,7 +22,7 @@ function DialogTrigger({
 function DialogPortal({
   ...props
 }: React.ComponentProps<typeof DialogPrimitive.Portal>) {
-  return <DesignPortal data-slot="dialog-portal" {...props} />
+  return <DialogPrimitive.Portal data-slot="dialog-portal" {...props} />
 }
 
 function DialogClose({
@@ -156,9 +155,4 @@ export {
   DialogPortal,
   DialogTitle,
   DialogTrigger,
-}
-
-function DesignPortal(props: React.ComponentProps<typeof DialogPrimitive.Portal>) {
-  const container = useDesignPortalContainer()
-  return <DialogPrimitive.Portal {...props} container={props.container ?? container ?? undefined} />
 }

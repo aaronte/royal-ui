@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useDesignPortalContainer } from "@/lib/portal"
 import { Combobox as ComboboxPrimitive } from "@base-ui/react"
 import { cn } from "cn"
 import { CheckIcon, ChevronDownIcon, XIcon } from "lucide-react"
@@ -106,7 +105,7 @@ function ComboboxContent({
     "side" | "align" | "sideOffset" | "alignOffset" | "anchor"
   >) {
   return (
-    <DesignPortal>
+    <ComboboxPrimitive.Portal>
       <ComboboxPrimitive.Positioner
         side={side}
         sideOffset={sideOffset}
@@ -125,7 +124,7 @@ function ComboboxContent({
           {...props}
         />
       </ComboboxPrimitive.Positioner>
-    </DesignPortal>
+    </ComboboxPrimitive.Portal>
   )
 }
 
@@ -311,9 +310,4 @@ export {
   ComboboxTrigger,
   ComboboxValue,
   useComboboxAnchor,
-}
-
-function DesignPortal(props: React.ComponentProps<typeof ComboboxPrimitive.Portal>) {
-  const container = useDesignPortalContainer()
-  return <ComboboxPrimitive.Portal {...props} container={props.container ?? container ?? undefined} />
 }

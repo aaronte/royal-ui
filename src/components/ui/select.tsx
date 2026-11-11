@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { useDesignPortalContainer } from "@/lib/portal"
 import { cn } from "cn"
 import { CheckIcon, ChevronDownIcon, ChevronUpIcon } from "lucide-react"
 import { Select as SelectPrimitive } from "radix-ui"
@@ -59,7 +58,7 @@ function SelectContent({
   ...props
 }: React.ComponentProps<typeof SelectPrimitive.Content>) {
   return (
-    <DesignPortal>
+    <SelectPrimitive.Portal>
       <SelectPrimitive.Content
         data-slot="select-content"
         className={cn(
@@ -84,7 +83,7 @@ function SelectContent({
         </SelectPrimitive.Viewport>
         <SelectScrollDownButton />
       </SelectPrimitive.Content>
-    </DesignPortal>
+    </SelectPrimitive.Portal>
   )
 }
 
@@ -188,9 +187,4 @@ export {
   SelectSeparator,
   SelectTrigger,
   SelectValue,
-}
-
-function DesignPortal(props: React.ComponentProps<typeof SelectPrimitive.Portal>) {
-  const container = useDesignPortalContainer()
-  return <SelectPrimitive.Portal {...props} container={props.container ?? container ?? undefined} />
 }
