@@ -1,0 +1,16 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "font-instrument-sans",
+  "title": "Instrument Sans",
+  "description": "Instrument Sans, which Royal's font tokens read from --font-instrument-sans.",
+  "type": "registry:font",
+  "font": {
+    "family": "'Instrument Sans', Arial, sans-serif",
+    "provider": "google",
+    "import": "Instrument_Sans",
+    "variable": "--font-instrument-sans",
+    "subsets": [
+      "latin"
+    ]
+  }
+}

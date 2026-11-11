@@ -1,0 +1,1318 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "royal",
+  "homepage": "https://github.com/aaronte/royal-ui",
+  "items": [
+    {
+      "name": "font-source-serif-4",
+      "type": "registry:font",
+      "title": "Source Serif 4",
+      "description": "Source Serif 4, which Royal's font tokens read from --font-source-serif.",
+      "font": {
+        "family": "'Source Serif 4', Georgia, serif",
+        "provider": "google",
+        "import": "Source_Serif_4",
+        "variable": "--font-source-serif",
+        "subsets": [
+          "latin"
+        ]
+      }
+    },
+    {
+      "name": "font-instrument-sans",
+      "type": "registry:font",
+      "title": "Instrument Sans",
+      "description": "Instrument Sans, which Royal's font tokens read from --font-instrument-sans.",
+      "font": {
+        "family": "'Instrument Sans', Arial, sans-serif",
+        "provider": "google",
+        "import": "Instrument_Sans",
+        "variable": "--font-instrument-sans",
+        "subsets": [
+          "latin"
+        ]
+      }
+    },
+    {
+      "name": "font-ibm-plex-mono",
+      "type": "registry:font",
+      "title": "IBM Plex Mono",
+      "description": "IBM Plex Mono, which Royal's font tokens read from --font-ibm-plex-mono.",
+      "font": {
+        "family": "'IBM Plex Mono', ui-monospace, monospace",
+        "provider": "google",
+        "import": "IBM_Plex_Mono",
+        "variable": "--font-ibm-plex-mono",
+        "subsets": [
+          "latin"
+        ],
+        "weight": [
+          "400",
+          "500"
+        ]
+      }
+    },
+    {
+      "name": "royal",
+      "type": "registry:theme",
+      "title": "Royal",
+      "description": "Royal's tokens and the stylesheet that restyles the shadcn components, light and dark. Every Royal component installs it.",
+      "dependencies": [
+        "tw-animate-css@^1.4.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/font-source-serif-4.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/font-instrument-sans.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/font-ibm-plex-mono.json"
+      ],
+      "files": [
+        {
+          "path": "src/styles/tokens.css",
+          "type": "registry:file",
+          "target": "@lib/royal/tokens.css"
+        },
+        {
+          "path": "src/styles/royal.css",
+          "type": "registry:file",
+          "target": "@lib/royal/royal.css"
+        }
+      ],
+      "css": {
+        "@import \"../lib/royal/tokens.css\"": {},
+        "@import \"../lib/royal/royal.css\"": {},
+        "@custom-variant dark (&:where(.dark, .dark *))": {}
+      },
+      "cssVars": {
+        "theme": {
+          "font-sans": "var(--royal-font-body)",
+          "font-heading": "var(--royal-font-display)",
+          "font-mono": "var(--royal-font-code)",
+          "radius-sm": "var(--royal-radius-control)",
+          "radius-md": "var(--royal-radius-control)",
+          "radius-lg": "var(--royal-radius-panel)",
+          "radius-xl": "var(--royal-radius-panel)"
+        },
+        "light": {
+          "background": "var(--royal-color-paper)",
+          "foreground": "var(--royal-color-ink)",
+          "card": "var(--royal-color-paper)",
+          "card-foreground": "var(--royal-color-ink)",
+          "popover": "color-mix(in srgb, var(--royal-color-paper) 92%, transparent)",
+          "popover-foreground": "var(--royal-color-ink)",
+          "primary": "var(--royal-color-accent)",
+          "primary-foreground": "var(--royal-color-on-accent)",
+          "secondary": "var(--royal-color-wash)",
+          "secondary-foreground": "var(--royal-color-ink)",
+          "muted": "var(--royal-color-wash)",
+          "muted-foreground": "var(--royal-color-muted)",
+          "accent": "var(--royal-color-wash)",
+          "accent-foreground": "var(--royal-color-accent-text)",
+          "destructive": "var(--royal-color-error)",
+          "border": "var(--royal-color-rule)",
+          "input": "var(--royal-color-rule)",
+          "ring": "var(--royal-color-focus)",
+          "chart-1": "var(--royal-color-series-1)",
+          "chart-2": "var(--royal-color-series-2)",
+          "chart-3": "var(--royal-color-series-3)",
+          "chart-4": "var(--royal-color-series-4)",
+          "chart-5": "var(--royal-color-series-5)",
+          "sidebar": "var(--royal-color-wash)",
+          "sidebar-foreground": "var(--royal-color-ink)",
+          "sidebar-primary": "var(--royal-color-accent)",
+          "sidebar-primary-foreground": "var(--royal-color-on-accent)",
+          "sidebar-accent": "var(--royal-color-paper)",
+          "sidebar-accent-foreground": "var(--royal-color-accent-text)",
+          "sidebar-border": "var(--royal-color-rule)",
+          "sidebar-ring": "var(--royal-color-focus)",
+          "radius": "var(--royal-radius-control)"
+        },
+        "dark": {
+          "background": "var(--royal-color-paper)",
+          "foreground": "var(--royal-color-ink)",
+          "card": "var(--royal-color-paper)",
+          "card-foreground": "var(--royal-color-ink)",
+          "popover": "color-mix(in srgb, var(--royal-color-raised) 92%, transparent)",
+          "popover-foreground": "var(--royal-color-ink)",
+          "primary": "var(--royal-color-accent)",
+          "primary-foreground": "var(--royal-color-on-accent)",
+          "secondary": "var(--royal-color-wash)",
+          "secondary-foreground": "var(--royal-color-ink)",
+          "muted": "var(--royal-color-wash)",
+          "muted-foreground": "var(--royal-color-muted)",
+          "accent": "var(--royal-color-wash)",
+          "accent-foreground": "var(--royal-color-accent-text)",
+          "destructive": "var(--royal-color-error)",
+          "border": "var(--royal-color-rule)",
+          "input": "var(--royal-color-rule)",
+          "ring": "var(--royal-color-focus)",
+          "chart-1": "var(--royal-color-series-1)",
+          "chart-2": "var(--royal-color-series-2)",
+          "chart-3": "var(--royal-color-series-3)",
+          "chart-4": "var(--royal-color-series-4)",
+          "chart-5": "var(--royal-color-series-5)",
+          "sidebar": "var(--royal-color-wash)",
+          "sidebar-foreground": "var(--royal-color-ink)",
+          "sidebar-primary": "var(--royal-color-accent)",
+          "sidebar-primary-foreground": "var(--royal-color-on-accent)",
+          "sidebar-accent": "var(--royal-color-paper)",
+          "sidebar-accent-foreground": "var(--royal-color-accent-text)",
+          "sidebar-border": "var(--royal-color-rule)",
+          "sidebar-ring": "var(--royal-color-focus)",
+          "radius": "var(--royal-radius-control)"
+        }
+      }
+    },
+    {
+      "name": "use-mobile",
+      "type": "registry:hook",
+      "dependencies": [],
+      "files": [
+        {
+          "path": "src/hooks/use-mobile.ts",
+          "type": "registry:hook"
+        }
+      ]
+    },
+    {
+      "name": "accordion",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/accordion.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert-dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/alert-dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "alert",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/alert.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "aspect-ratio",
+      "type": "registry:ui",
+      "dependencies": [
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/aspect-ratio.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "attachment",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/attachment.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "avatar",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/avatar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "badge",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/badge.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "breadcrumb",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/breadcrumb.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "bubble",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/bubble.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/separator.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/button-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "button",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/button.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "calendar",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0",
+        "react-day-picker@^10.0.2"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/calendar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "card",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "carousel",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "embla-carousel-react@^8.6.0",
+        "lucide-react@^1.70.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/carousel.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "chart",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "recharts@^3.10.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/chart.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "checkbox",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/checkbox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "code-block",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/code-block.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "collapsible",
+      "type": "registry:ui",
+      "dependencies": [
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/collapsible.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "combobox",
+      "type": "registry:ui",
+      "dependencies": [
+        "@base-ui/react@^1.8.0",
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/button.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/input-group.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/combobox.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "command",
+      "type": "registry:ui",
+      "dependencies": [
+        "cmdk@^1.1.1",
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/dialog.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/command.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "context-menu",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/context-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dialog",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/dialog.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "direction",
+      "type": "registry:ui",
+      "dependencies": [
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/direction.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "drawer",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "vaul@^1.1.2"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/drawer.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "dropdown-menu",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/dropdown-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "empty",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/empty.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "field",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/label.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/separator.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/field.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "form",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1",
+        "react-hook-form@^7.91.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/label.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/form.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "hover-card",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/hover-card.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/button.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/input.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/textarea.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input-otp",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "input-otp@^1.5.0",
+        "lucide-react@^1.70.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input-otp.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "input",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/input.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "item",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/separator.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/item.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "kbd",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/kbd.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "label",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/label.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "marker",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/marker.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "menubar",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/menubar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message-scroller",
+      "type": "registry:ui",
+      "dependencies": [
+        "@shadcn/react@^0.3.1",
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/message-scroller.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "message",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/message.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "native-select",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/native-select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "navigation-menu",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/navigation-menu.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "pagination",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/pagination.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "popover",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/popover.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "progress",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/progress.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "questionnaire",
+      "type": "registry:ui",
+      "dependencies": [
+        "@shadcn/react@^0.3.1",
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/button.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/questionnaire.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "radio-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/radio-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "resizable",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0",
+        "react-resizable-panels@^4.20.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/resizable.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "scroll-area",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/scroll-area.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "select",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/select.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "separator",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/separator.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sheet",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sheet.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sidebar",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/button.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/input.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/separator.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/sheet.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/skeleton.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/tooltip.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/use-mobile.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sidebar.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "skeleton",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/skeleton.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "slider",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/slider.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "sonner",
+      "type": "registry:ui",
+      "dependencies": [
+        "lucide-react@^1.70.0",
+        "next-themes@^0.4.6",
+        "sonner@^2.0.8"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/sonner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "spinner",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/spinner.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "switch",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/switch.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "table",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/table.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tabs",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tabs.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "textarea",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/textarea.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle-group",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/toggle.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle-group.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "toggle",
+      "type": "registry:ui",
+      "dependencies": [
+        "class-variance-authority@^0.7.1",
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/toggle.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "tooltip",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "radix-ui@^1.8.1"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/tooltip.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    },
+    {
+      "name": "trace",
+      "type": "registry:ui",
+      "dependencies": [
+        "cn@^0.5.2",
+        "lucide-react@^1.70.0"
+      ],
+      "registryDependencies": [
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/royal.json",
+        "https://raw.githubusercontent.com/aaronte/royal-ui/main/public/r/collapsible.json"
+      ],
+      "files": [
+        {
+          "path": "src/components/ui/trace.tsx",
+          "type": "registry:ui"
+        }
+      ]
+    }
+  ]
+}
