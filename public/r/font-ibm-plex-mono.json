@@ -1,0 +1,20 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "font-ibm-plex-mono",
+  "title": "IBM Plex Mono",
+  "description": "IBM Plex Mono, which Royal's font tokens read from --font-ibm-plex-mono.",
+  "type": "registry:font",
+  "font": {
+    "family": "'IBM Plex Mono', ui-monospace, monospace",
+    "provider": "google",
+    "import": "IBM_Plex_Mono",
+    "variable": "--font-ibm-plex-mono",
+    "weight": [
+      "400",
+      "500"
+    ],
+    "subsets": [
+      "latin"
+    ]
+  }
+}
